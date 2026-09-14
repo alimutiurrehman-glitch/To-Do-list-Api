@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 app=FastAPI()
@@ -31,3 +31,12 @@ def add_task(task:TaskCreate):
 @app.get("/tasks")
 def list_tasks():
     return tasks
+
+@app.patch("/tasks/{task_id}/done")
+def mark_task_done(task_id:int):
+    for task in tasks:
+        if task["id"]==task_id:
+            task["done"]= True
+            return task
+
+    raise HTTPException(status_code=404,detail="Task id not found")
