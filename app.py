@@ -6,7 +6,7 @@ app=FastAPI()
 class TaskCreate(BaseModel):
     title:str
 
-
+#we are not using database so these variables will keep track of the tasks and their ids in our in-memory storage
 tasks=[]
 next_id=1
 
@@ -27,3 +27,7 @@ def add_task(task:TaskCreate):
     tasks.append(new_task)
     next_id+=1
     return new_task
+
+@app.get("/tasks")
+def list_tasks():
+    return tasks
