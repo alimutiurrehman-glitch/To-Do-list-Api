@@ -33,9 +33,9 @@ docker run --rm -p 8000:8000 todo-api
 ```
 
 
-```markdown
-## API Endpoints
 
+## API Endpoints
+```markdown
 ### Create a Task
 
 `POST /tasks`
