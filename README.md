@@ -104,7 +104,7 @@ If the task does not exist, the API returns a `404 Not Found` response.
 ```
 
 
-```markdown
+
 ## Continuous Integration
 
 A GitHub Actions workflow runs whenever code is pushed to the repository.
@@ -112,11 +112,11 @@ A GitHub Actions workflow runs whenever code is pushed to the repository.
 The workflow checks out the repository and builds the Docker image.
 
 If the Docker image cannot be built successfully, the workflow fails.
-```
 
 
 
-```markdown
+
+
 ## Reflection
 
 The trickiest part of this project was connecting the different pieces together. Building the API itself was fairly simple, but Docker introduced another environment where the application also needed to run correctly. 
@@ -124,5 +124,5 @@ The trickiest part of this project was connecting the different pieces together.
 I chose FastAPI because it made it easy to create a small REST API while also providing request validation and automatic interactive documentation. I used in-memory storage because persistence was not required by the assignment, so adding a database would have added unnecessary complexity.
 
 If I had another day, I would add automated tests for the endpoints and make the GitHub Actions workflow run those tests before building the Docker image. I would also replace the in memory list with a database such as PostgreSQL so tasks would persist after the application restarts.
-```
+
 
